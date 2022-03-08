@@ -131,15 +131,15 @@ class MainApi {
     );
   }
 
-  deleteArticle(articleId, token) {
-    // const token = localStorage.removeItem('token');
+  deleteArticle(articleId) {
+    const token = localStorage.removeItem('token');
     return fetch(`${this._baseUrl}/articles/${articleId}`, {
       method: 'DELETE',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
-        // authorization: `Bearer ${localStorage.getItem('token')}`,
+        // authorization: `Bearer ${token}`,
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
     // .then((res) => {
@@ -149,8 +149,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  // baseUrl: 'http://localhost:3001', //localhost
-  baseUrl: 'https://lkovacs-news.students.nomoreparties.site', //api back-end
+  baseUrl: 'http://localhost:3001', //localhost
   headers: {
     // 'Content-Type': 'application/json',
     // Authorization: `Bearer ${token}`,

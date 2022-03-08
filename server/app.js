@@ -25,7 +25,6 @@ const allowedCors = [
   'http://localhost:3001',
   'https://newsapi.org/v2',
   'https://nomoreparties.co/news/v2',
-  'https://lkovacs-news.students.nomoreparties.site',
 ];
 
 mongoose.connect(DB_ADDRESS, {
