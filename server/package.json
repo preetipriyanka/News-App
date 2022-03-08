@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "The API backend for News Explorer app, a React app serching news.",
   "main": "app.js",
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage && echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -21,6 +25,7 @@
     "express-rate-limit": "^5.2.6",
     "express-winston": "^4.0.5",
     "helmet": "^4.6.0",
+    "jest": "^27.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.12",
     "validator": "^13.5.2",
